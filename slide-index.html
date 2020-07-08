@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="slide.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&display=swap" rel="stylesheet"> 
+    <title> OFİS FOTOĞRAF GALERİSİ </title>
+</head>
+<body>
+    
+    <h2> OFİS FOTOĞRAF GALERİSİ </h2>
+
+    <div class="slider-ctr">
+        
+        
+        
+        <figure class="slide"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/111167/img1.jpeg" alt="River"/>
+          <figcaption> 
+            <div class="title"> Bekleme salonu </div>
+          </figcaption>
+        </figure>
+        
+        <figure class="slide"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/111167/img4.jpeg" alt="Rain"/>
+          <figcaption>
+            <div class="title">Terapi odası</div>
+          </figcaption>
+        </figure>
+
+        <figure class="slide"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/111167/img4.jpeg" alt="Rain"/>
+          <figcaption>
+            <div class="title">Karşılama Alanı</div>
+          </figcaption>
+        </figure>
+        
+        
+
+
+        <div class="slider-control">
+          <div class="control prev disabled">
+            <div class="icon ion-chevron-left"> <?xml version="1.0" encoding="iso-8859-1"?>
+              <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                 viewBox="0 0 240.823 240.823" style="enable-background:new 0 0 240.823 240.823; width: 15px; height: 15px; margin-bottom: 6px;" xml:space="preserve">
+              <g>
+                <path id="Chevron_Right" d="M57.633,129.007L165.93,237.268c4.752,4.74,12.451,4.74,17.215,0c4.752-4.74,4.752-12.439,0-17.179
+                  l-99.707-99.671l99.695-99.671c4.752-4.74,4.752-12.439,0-17.191c-4.752-4.74-12.463-4.74-17.215,0L57.621,111.816
+                  C52.942,116.507,52.942,124.327,57.633,129.007z"/>
+                <g>
+                </g>
+              </svg>
+               </div>
+          </div>
+          <div class="control next">
+            <div class="icon ion-chevron-right"> <?xml version="1.0" encoding="iso-8859-1"?>
+              <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                 viewBox="0 0 240.823 240.823" style="enable-background:new 0 0 240.823 240.823; width: 15px; height: 15px; margin-bottom: 6px;" xml:space="preserve">
+              <g>
+                <path id="Chevron_Right_1_" d="M183.189,111.816L74.892,3.555c-4.752-4.74-12.451-4.74-17.215,0c-4.752,4.74-4.752,12.439,0,17.179
+                  l99.707,99.671l-99.695,99.671c-4.752,4.74-4.752,12.439,0,17.191c4.752,4.74,12.463,4.74,17.215,0l108.297-108.261
+                  C187.881,124.315,187.881,116.495,183.189,111.816z"/>
+                <g>
+                </g>
+              </svg>
+               </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="home">
+        <a href="index.html"> Anasayfaya Dön </a> 
+      </div>
+
+</body>
+
+
+<script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+<script>
+    // buttons
+var sliderControl = document.querySelector(".slider-control");
+
+// slides informations
+var slides = document.querySelectorAll(".slide"),
+    slidesLength = slides.length;
+
+// slides array
+var slidesArr = [].slice.call(slides);
+
+// reverse array sorting
+slidesArr = slidesArr.reverse();
+
+// slide current
+var slideCurrent = 0;
+
+sliderControl.addEventListener("click", function(e){
+  target = e.target;
+  
+  // get next button
+  if(target.classList.contains("next")){
+
+    next = e.target,
+    prev = next.previousElementSibling,
+    nextSlide = slidesArr[slideCurrent + 1],
+    slide = slidesArr[slideCurrent];
+    
+    slide.classList.add("slide-on");
+    slide.classList.remove("text-on");
+    nextSlide.classList.add("text-on");
+    
+    slideCurrent += 1;
+    
+    if(slideCurrent > 0) {
+      prev.classList.remove("disabled");
+    }
+    
+    if(slideCurrent === slidesLength - 1){
+      next.classList.add("disabled");
+    }
+  }
+  
+  // get prev button
+  if(target.classList.contains("prev")){
+    
+    slideCurrent -= 1;
+    
+    prev = e.target,
+    next = prev.nextElementSibling,
+    prevSlide = slidesArr[slideCurrent + 1],
+    slide = slidesArr[slideCurrent];
+    
+    prevSlide.classList.remove("text-on");
+    slide.classList.remove("slide-on");
+    slide.classList.add("text-on");
+    
+    if(slideCurrent === slidesLength - 2){
+      next.classList.remove("disabled");
+    }
+
+    if(slideCurrent === 0){
+      prev.classList.add("disabled");
+    }
+    
+  }
+
+});
+
+balapaCop("Image Slider", "#999");
+</script>
+</html>

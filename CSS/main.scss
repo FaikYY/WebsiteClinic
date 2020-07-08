@@ -1,0 +1,565 @@
+$font-size-desktop: .8em;
+$font-size-mobile:  1em;
+$header-font-size-desktop: 2.3em;
+$header-font-size-mobile: 1.7em;
+$logo-font-size-desktop: 1.2em;
+$logo-font-size-mobile: .6em;
+$border-rad: 1.25em;
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat' , sans-serif;
+}
+
+.main-container{
+    height: 100vh;
+    width: 100%;
+    overflow-y: hidden;
+
+    display: grid;
+    grid-template-rows: 14% 1fr 5%;
+    grid-template-areas: 
+        "navbar"
+        "main  "
+        "footer";
+    
+}
+
+
+header{
+    grid-area: navbar;
+    background-color: rgba(240, 240, 240, 0.2);
+
+    display: flex;
+    align-items: center;
+    
+    #logo {
+        font-weight: 800;
+        font-size: $logo-font-size-desktop;
+        margin-left: 4em;
+        }
+          
+    #logo:after {
+        content: " ";
+        border-bottom-style: solid;
+        border-bottom-width: 1px;
+        border-color: rgb(22, 22, 22);
+        padding-top: 1px;
+        display: table-cell;
+        width: 18.5em;
+        }
+        
+}
+
+main{
+    grid-area: main;
+    margin: 5em;
+
+    display: grid;
+    grid-template-columns: 1.8fr 1fr .8fr;
+    grid-template-rows: 0.4fr 0.7fr;
+    grid-column-gap: 4em;
+    grid-row-gap: 5em;
+    grid-template-areas: 
+        "box1 box2 box4"
+        "box1 box3 box4";
+
+    .box{
+        border-radius: $border-rad;
+    }
+
+    #box1{
+        border: 2px solid #0f117a;
+        grid-area: box1;
+        display: grid;
+        grid-row-gap: 1em;
+        grid-template-rows: 60% 1fr;
+        grid-template-areas: 
+            "profil"
+            "terapi";
+
+
+        #hakkımda-profil-anakutu{
+            grid-area: profil;
+            position: relative;
+            display: grid;
+            align-items: center;
+            grid-template-columns: .4fr 1fr;
+            grid-template-areas: 
+                "foto yazı";
+
+            
+
+            h3{
+                position: absolute;
+                top: 1em;
+                left: 1em;
+            }
+
+            img{
+                margin-top: 1.4em;
+                grid-area: foto;
+                width: 7em;
+                height: 7em;
+                margin-left: 1.5em;
+                border-radius: 50%;
+                border: 2px solid rgba(0, 0, 0, 0.74);
+            }
+
+            p{
+                grid-area: yazı;
+                font-size: .7em;
+                margin-top: 1.5em;
+                margin-left: 1.5em;
+                margin-right: 1em;
+            }
+
+            a{
+                margin-left: 0;
+            }
+        }
+
+        #hakkımda-terapi-anakutu{
+            grid-area: terapi;
+            display: flex;
+            flex-direction: column;
+            display: none;
+            
+            h4{
+                align-self: center;
+            }
+
+            ul {
+                /*border: 1px solid black;*/
+                list-style-type: none;
+                column-count: 3;
+                padding: .6em 3% 2% 5%;
+              }
+              
+            li {
+                font-size: $font-size-desktop;
+                padding-top: .4em;
+              }
+
+            .hide{
+                display: none;
+            }
+        }
+    }
+
+    #box2{
+        background-color: rgba(244, 244, 244, 0.3);
+        border-radius: $border-rad;
+        grid-area: box2;
+    }
+
+    .bize-ulaşın-kutusu{
+        transition: all 0.5s ease;
+        position: relative;
+
+        
+
+        &:before{
+            content: " ";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #9bdc28;
+            clip-path: circle(70px at 90% 20%);
+            transition: 0.5s ease-in-out;
+        }
+
+        &:hover:before{
+            clip-path: circle(500px at 90% -20%);
+        }
+
+        &:hover .tel-num {
+            color: white;
+            transition: 0.5s;
+            transform: translateX(1.1em) translateY(-1.8em);
+            font-size: 22px;
+        }
+
+        .tel-num {
+            transition: 800ms;
+            font-weight: 600;
+            margin-left: 1em;
+            margin-top: 1em;
+          }
+
+        .bize-ulaşın-başlık {
+          font-weight: 700;
+          letter-spacing: 2px;
+          margin: 1em;
+        }
+
+        .bize-ulaşın-text {
+            font-size: $font-size-desktop - .2em;
+            width: 210px;
+            margin-left: 1em;
+          }
+          
+        /* Whatsapp icon özellikleri */
+        .wp-icon {
+          position: relative;
+          float: right;
+          right: 17px;
+          top: 13px;
+          fill: white;
+        }
+    }
+
+
+
+    #box3{
+        border: 2px solid chartreuse;
+        grid-area: box3;
+        padding: 1em;
+        text-decoration: none;
+        color: black;
+        position: relative;
+        
+        p{
+            font-size: $font-size-mobile - 0.2em;
+            position: absolute;
+            top: 8em;
+        }
+    }
+
+
+    #map-container{
+        border: 2px solid orange;
+        grid-area: box4;
+        padding: 1em;
+
+        p{
+            white-space: pre-line;
+        }
+
+        #map{
+            margin-top: 7em;
+        }
+    }
+
+    
+}
+
+
+
+.pulse svg{
+    display: none;
+}
+
+footer{
+    grid-area: footer;
+    background-color: rgba(244, 244, 244, 0.7);
+}
+
+
+
+
+          // MOBILE DEVICE STYLE
+@media screen and (min-width: 200px) and (max-width: 500px){
+
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body, html{
+        
+        box-sizing: border-box;
+        position: relative;
+
+    }
+
+    header{
+
+    display: flex;
+    align-items: center;
+    background-color: #e8ffe8;
+   // background-color: rgba(240, 240, 240, 0.4);
+
+
+    #logo {
+        font-weight: 800;
+        font-size: $logo-font-size-mobile + .5em;
+        margin-left: 2em;
+        color: rgb(50, 50, 50);
+      }
+      
+    #logo:after {
+        content: " ";
+        border-bottom-style: solid;
+        border-bottom-width: 1px;
+        border-color: rgb(22, 22, 22);
+        padding-top: 1px;
+        display: table-cell;
+        width: 18.4em;
+     }
+    }
+
+
+    .main-container{
+        overflow-y: visible;
+        grid-template-rows: 20% 1fr 10%;
+        
+    }
+
+    main{
+        height: auto;
+        grid-area: main; 
+        
+
+        margin-left: 1.2em;
+        margin-right: 1.2em;
+        margin-top: 1em;
+        display: grid;
+        grid-row-gap: 2em;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: 
+            "box1"
+            "box3"
+            "box4";
+    
+        .box{
+
+            
+            
+        }
+
+        #box1{
+            margin-top: 2em;
+            border: 2px solid #0f117a;
+            background: none; 
+            grid-area: box1;
+            display: grid;
+            grid-template-rows: .6fr .2fr;
+            padding: 1em;
+            grid-template-areas: 
+                "profil"
+                "terapi";
+
+                
+
+
+                #hakkımda-profil-anakutu{
+                    grid-area: profil;
+                    position: relative;
+                    display: grid;
+                    justify-items: center;
+                    text-align: justify;
+                    grid-template-columns: 1fr;
+                    grid-template-rows: .5fr 1fr;
+                    grid-template-areas: 
+                        "foto"
+                        "yazı";
+        
+                    
+                    h3{
+                        position: absolute;
+                        top: 1em;
+                        left: 1em;
+                    }
+
+                    
+
+                    img{
+                        grid-area: foto;
+                        width: 9em;
+                        height: 9em;
+                        border-radius: 50%;
+                        margin-right: 2em;
+                        margin-top: 5em;
+                        border: 2px solid rgba(0, 0, 0, 0.74);
+                    }
+        
+                    .yazı1 .yazı2 {
+                        width: 90%;
+                        font-size: $font-size-mobile - .2em;
+                        margin-left: 2em;
+                    }
+
+                    p{
+                        grid-area: yazı;
+                        width: 90%;
+                        font-size: $font-size-mobile - .2em;
+                        margin-left: 2em;
+                    }
+
+                    /*
+                    a{
+                        margin: 0;
+                        margin-left: 1.7em;
+                        font-size: .9em;
+                        color: blue;
+                    }
+                    */
+                }
+        
+                #hakkımda-terapi-anakutu{
+                    grid-area: terapi;
+                    display: flex;
+                    flex-direction: column;
+                    margin-top: 1em;
+                    
+                    h4{
+                        align-self: center;
+                        font-size: .8em;
+                    }
+        
+                    #eğitim{
+                        margin-bottom: 2.5em;
+                    }
+
+                    #klinik{
+                        font-size: $font-size-mobile - .1em;
+                    }
+
+                    ul {
+                        /*border: 1px solid black;*/
+                        list-style-type: none;
+                        column-count: 1;
+
+                      }
+                      
+                    li {
+                        font-size: $font-size-mobile - .1em;
+                        padding-top: .9em;
+
+                        .bilgi{
+                            font-size: $font-size-mobile - .2em;
+                        }
+
+                        
+                      }
+                }
+            }
+    
+        #box2{
+            background-color: rgb(180, 180, 180);
+            grid-area: box2;
+            height: 300px;
+            display: none;
+        }
+
+        
+        a{
+            text-decoration: none;
+            color: black;
+        }
+
+        #box3{
+            background: none;
+            border: 2px solid chartreuse;
+            grid-area: box3;
+            height: 200px;
+
+
+            
+
+            p{
+                width: 80%;
+                margin-top: -3em;
+                font-size: $font-size-mobile;
+            }
+
+            
+        }
+    
+        #map-container{
+            grid-area: box4;
+            border: 2px solid orange;
+            padding: 1em;
+
+            p{
+                white-space: pre-line;
+                font-size: $font-size-mobile;
+            }
+
+            
+
+            #map{
+                margin-top: 2em;
+            }
+        }
+    }
+
+
+    .pulse {
+        position: fixed!important;
+        bottom: 0%;
+        left: 85%;
+        transform: translate(-50%, -50%);
+        background: #9bdc28;
+        border-radius: 50%;
+        width: 55px;
+        height: 55px;
+        color: #fff;
+        text-align: center;
+        line-height: 55px;
+        font-size: 40px;
+          z-index:1;
+
+          svg{
+              fill: white;
+              display: inline;
+              transform: rotate(240deg);
+          }
+      }
+      
+      .pulse:before,
+      .pulse:after {
+          content: " ";
+          display: block;
+          position: absolute;
+          border: 50%;
+          border: 2px solid #87bd2a;
+          left: -20px;
+          right: -20px;
+          top: -20px;
+          bottom: -20px;
+          border-radius: 50%;
+          animation: animate 1.5s linear infinite;
+          opacity: 0;
+          backface-visibility: hidden; 
+      }
+      
+      .pulse:after{
+          animation-delay: .5s;
+      }
+      
+      @keyframes animate
+      {
+          0%
+          {
+              transform: scale(0.5);
+              opacity: 0;
+          }
+          50%
+          {
+              opacity: 1;
+          }
+          100%
+          {
+              transform: scale(1.2);
+              opacity: 0;
+          }
+      }
+
+      footer{
+        background-color: #e8ffe8;
+        display: flex;
+        align-items: center;
+        padding-left: 1em;
+        font-size: .9em;
+      }
+
+}

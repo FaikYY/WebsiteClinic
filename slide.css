@@ -1,0 +1,298 @@
+
+html,
+body {
+  height: 100vh;
+  position: relative;
+  font-family: 'Montserrat';
+  background: #f8f8f8;
+  overflow-y: hidden;
+}
+
+h2{
+  font-size: 1.3em;
+  margin-left: .6em;
+  margin-top: 1em;
+}
+
+
+
+.home{
+  position: absolute;
+  bottom: 8%;
+  margin-left: 4%;
+  background: rgb(235, 235, 235);
+  padding: 1.2em;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.home a {
+  text-decoration: none;
+  color: black;
+}
+
+.slider-ctr {
+  top: 5em;
+  left: 15%;
+  width: 70%;
+  height: 70%;
+  position: absolute;
+  box-sizing: border-box;
+  border: 5px solid white;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 10px 15px 3px rgba(0, 0, 0, 0.15), 0 5px 20px 3px rgba(0, 0, 0, 0.1);
+}
+
+.slider-control {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  width: 80px;
+  overflow: hidden;
+  border-radius: 3px;
+  box-shadow: 0 3px 3px 3px rgba(0, 0, 0, 0.15);
+  z-index: 99;
+}
+
+.slider-control .control {
+  width: 50%;
+  height: 1.5em;
+  display: block;
+  float: left;
+  text-align: center;
+  line-height: 40px;
+  cursor: pointer;
+  transition: .3s all ease;
+  background: white;
+}
+
+.slider-control .control .icon {
+  pointer-events: none;
+  transition: .3s all ease;
+}
+.slider-control .control.disabled {
+  pointer-events: none;
+  background: #ddd;
+}
+.slider-control .control.disabled .icon {
+  opacity: .5;
+}
+
+/* Container içindeki slayt için style */
+.slide {
+  position: absolute;
+  top: -.4em;
+  right: -1.9em;
+  bottom: -.6em;
+  left: -1.9em;
+  transition: 0.45s all cubic-bezier(0.65, 0.05, 0.36, 1);
+  -webkit-clip-path: inset(0 0 0 0);
+  clip-path: inset(0 0 0 0);
+}
+
+
+/* Hafif üst kısma gölge */ 
+.slide:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.125);
+}
+
+
+/* Slayt efektler class ları */
+.slide.slide-on {
+  -webkit-clip-path: inset(0 100% 0 0);
+  clip-path: inset(0 100% 0 0);
+}
+
+.slide.text-on .title {
+  transition: 0.3s all cubic-bezier(0.65, 0.05, 0.36, 1) 0.45s;
+  -webkit-clip-path: inset(0 0 0 0);
+  clip-path: inset(0 0 0 0);
+}
+/*******************************/
+
+
+.slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+
+
+.slide figcaption {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+
+.slide .title {
+  font-size: .8em;
+  margin-bottom: 2px;
+  color: white;
+  transition: 0.3s all cubic-bezier(0.65, 0.05, 0.36, 1) 0.45s;
+  -webkit-clip-path: inset(0 0 0 100%);
+  clip-path: inset(0 0 0 100%);
+  font-weight: 400;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+  position: relative;
+}
+
+
+@media screen and (min-width: 200px) and (max-width: 500px){
+  
+html,
+body {
+  height: 100vh;
+  position: relative;
+  font-family: 'Montserrat';
+  background: #f8f8f8;
+  overflow-y: hidden;
+}
+
+h2{
+  font-size: 1.3em;
+  margin-left: .6em;
+  margin-top: 3.5em;
+}
+
+
+
+.home{
+  position: absolute;
+  bottom: 25%;
+  margin-left: .6em;
+  background: rgb(235, 235, 235);
+  padding: 1.2em;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.home a {
+  text-decoration: none;
+  color: black;
+}
+
+.slider-ctr {
+  top: 8em;
+  width: 100%;
+  left: 0;
+  height: 18.75em;
+  position: absolute;
+  box-sizing: border-box;
+  border: 5px solid white;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 10px 15px 3px rgba(0, 0, 0, 0.15), 0 5px 20px 3px rgba(0, 0, 0, 0.1);
+}
+
+.slider-control {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  width: 80px;
+  overflow: hidden;
+  border-radius: 3px;
+  box-shadow: 0 3px 3px 3px rgba(0, 0, 0, 0.15);
+  z-index: 99;
+}
+
+.slider-control .control {
+  width: 50%;
+  height: 1.5em;
+  display: block;
+  float: left;
+  text-align: center;
+  line-height: 40px;
+  cursor: pointer;
+  transition: .3s all ease;
+  background: white;
+}
+
+.slider-control .control .icon {
+  pointer-events: none;
+  transition: .3s all ease;
+}
+.slider-control .control.disabled {
+  pointer-events: none;
+  background: #ddd;
+}
+.slider-control .control.disabled .icon {
+  opacity: .5;
+}
+
+/* Container içindeki slayt için style */
+.slide {
+  position: absolute;
+  top: -.4em;
+  right: -1.9em;
+  bottom: -.6em;
+  left: -1.9em;
+  transition: 0.45s all cubic-bezier(0.65, 0.05, 0.36, 1);
+  -webkit-clip-path: inset(0 0 0 0);
+  clip-path: inset(0 0 0 0);
+}
+
+
+/* Hafif üst kısma gölge */ 
+.slide:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.125);
+}
+
+
+/* Slayt efektler class ları */
+.slide.slide-on {
+  -webkit-clip-path: inset(0 100% 0 0);
+  clip-path: inset(0 100% 0 0);
+}
+
+.slide.text-on .title {
+  transition: 0.3s all cubic-bezier(0.65, 0.05, 0.36, 1) 0.45s;
+  -webkit-clip-path: inset(0 0 0 0);
+  clip-path: inset(0 0 0 0);
+}
+/*******************************/
+
+
+.slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+
+
+.slide figcaption {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+
+.slide .title {
+  font-size: .8em;
+  margin-bottom: 2px;
+  color: white;
+  transition: 0.3s all cubic-bezier(0.65, 0.05, 0.36, 1) 0.45s;
+  -webkit-clip-path: inset(0 0 0 100%);
+  clip-path: inset(0 0 0 100%);
+  font-weight: 400;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+  position: relative;
+}
+}
