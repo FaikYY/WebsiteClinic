@@ -719,6 +719,9 @@ footer {
     margin-top: 5em;
     border: 2px solid rgba(0, 0, 0, 0.74);
   }
+  main #box1 #hakkımda-profil-anakutu .yazı1 {
+    margin-top: 3em;
+  }
   main #box1 #hakkımda-profil-anakutu .yazı1 .yazı2 {
     width: 90%;
     font-size: 0.8em;
