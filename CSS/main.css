@@ -13,8 +13,8 @@
   overflow-y: hidden;
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: 14% 1fr 5%;
-      grid-template-rows: 14% 1fr 5%;
+  -ms-grid-rows: 14% 1fr 10%;
+      grid-template-rows: 14% 1fr 10%;
       grid-template-areas: "navbar" "main  " "footer";
 }
 
@@ -22,7 +22,8 @@ header {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: navbar;
-  background-color: rgba(240, 240, 240, 0.2);
+  background-color: #e8ffe8;
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -31,20 +32,43 @@ header {
           align-items: center;
 }
 
+header a {
+  text-decoration: none;
+  color: black;
+  font-size: 0.9em;
+}
+
+header a:after {
+  content: '';
+  display: block;
+  border-bottom: 1px solid black;
+  width: 0;
+  position: absolute;
+  left: 0;
+  -webkit-transition: 800ms ease;
+  transition: 800ms ease;
+}
+
+header a:hover:after {
+  width: 100%;
+}
+
+header #eğitim-nav {
+  position: absolute;
+  right: 20em;
+}
+
+header #klinik-nav {
+  position: absolute;
+  right: 6em;
+}
+
 header #logo {
   font-weight: 800;
   font-size: 1.2em;
   margin-left: 4em;
-}
-
-header #logo:after {
-  content: " ";
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
-  border-color: #161616;
-  padding-top: 1px;
-  display: table-cell;
-  width: 18.5em;
+  display: inline-block;
+  border-bottom: 1px solid black;
 }
 
 main {
@@ -114,6 +138,10 @@ main #box1 #hakkımda-profil-anakutu img {
   border: 2px solid rgba(0, 0, 0, 0.74);
 }
 
+main #box1 #hakkımda-profil-anakutu .yazı1 {
+  margin-top: 6em;
+}
+
 main #box1 #hakkımda-profil-anakutu p {
   -ms-grid-row: 1;
   -ms-grid-column: 2;
@@ -122,10 +150,6 @@ main #box1 #hakkımda-profil-anakutu p {
   margin-top: 1.5em;
   margin-left: 1.5em;
   margin-right: 1em;
-}
-
-main #box1 #hakkımda-profil-anakutu a {
-  margin-left: 0;
 }
 
 main #box1 #hakkımda-terapi-anakutu {
@@ -203,9 +227,9 @@ main .bize-ulaşın-kutusu:hover .tel-num {
   color: white;
   -webkit-transition: 0.5s;
   transition: 0.5s;
-  -webkit-transform: translateX(1.1em) translateY(-1.8em);
-          transform: translateX(1.1em) translateY(-1.8em);
-  font-size: 22px;
+  -webkit-transform: translateX(0.3em) translateY(-1.8em);
+          transform: translateX(0.3em) translateY(-1.8em);
+  font-size: 20px;
 }
 
 main .bize-ulaşın-kutusu .tel-num {
@@ -231,8 +255,8 @@ main .bize-ulaşın-kutusu .bize-ulaşın-text {
 main .bize-ulaşın-kutusu .wp-icon {
   position: relative;
   float: right;
-  right: 17px;
-  top: 13px;
+  right: 11px;
+  top: 9px;
   fill: white;
 }
 
@@ -278,7 +302,12 @@ footer {
   -ms-grid-row: 3;
   -ms-grid-column: 1;
   grid-area: footer;
-  background-color: rgba(244, 244, 244, 0.7);
+  background-color: #e8ffe8;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: 1%;
+  padding-left: 3em;
 }
 
 @media screen and (min-width: 200px) and (max-width: 500px) {
@@ -301,6 +330,12 @@ footer {
         -ms-flex-align: center;
             align-items: center;
     background-color: #e8ffe8;
+  }
+  header #eğitim-nav {
+    display: none;
+  }
+  header #klinik-nav {
+    display: none;
   }
   header #logo {
     font-weight: 800;

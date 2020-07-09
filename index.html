@@ -18,7 +18,15 @@
             <p id="logo">
                 PSİKİYATRİST & PSİKOTERAPİST <br />
                 UZMAN DR. NURGÜL YEŞİLYAPRAK
-              </p>
+            </p>
+
+            <a href="eğitim-index.html" id="eğitim-nav" class="nav-hover">
+                  EĞİTİMLER VE UYGULANAN PSİKOTERAPİLER
+            </a>
+
+            <a href="klinik-index.html" id="klinik-nav" class="nav-hover">
+                  KLİNİK İLGİ ALANLARI
+                </a>
         </header>
 
         <main> 
@@ -154,6 +162,9 @@
 
 <script>
 
+const mq = window.matchMedia( "(max-width: 500px)" );
+const macWidth = window.matchMedia( "(min-width:505px)" );
+
 function toggleText(btn, id){
 
     var e = document.getElementById(id);
@@ -164,7 +175,17 @@ function toggleText(btn, id){
 
         btn.innerHTML = "Devamını oku";
 
-        document.getElementById("hakkımda-terapi-anakutu").style.display = "flex";
+        if(mq.matches){
+            document.getElementById("hakkımda-terapi-anakutu").style.display = "flex";
+        }
+        else if(macWidth.matches){
+        // hakkımda-terapi-anakutu gizle
+        document.getElementById("hakkımda-terapi-anakutu").style.display = "none";
+        
+        // Yazı küçüldükten sonra 6em'lik boşluğu bırak
+        document.getElementsByClassName("yazı1")[0].style.marginTop = "6em";
+
+        }
             
     }
 
@@ -173,15 +194,14 @@ function toggleText(btn, id){
         e.style.display = 'block';
 
 
-        const mq = window.matchMedia( "(max-width: 500px)" );
-        const macWidth = window.matchMedia( "(min-width:505px)" );
+        
 
-        // mobil version
+        // mobil versiyon
         if(mq.matches){
             document.getElementById("hakkımda-profil-anakutu").style.gridTemplateRows = ".1fr 1fr";
         }
 
-        //macbook version
+        //macbook versiyon
         if(macWidth.matches){
             const terapi = document.getElementById("hakkımda-terapi-anakutu");
             terapi.style.display = "none";
@@ -189,8 +209,15 @@ function toggleText(btn, id){
             const yazıGörünmez = document.getElementById("more");
             const yazıGörünür  = document.getElementById("less");
             
-            yazıGörünmez.style.fontSize = ".8em";
-            yazıGörünür.style.fontSize  = ".8em";
+            yazıGörünmez.style.fontSize = ".7em";
+            yazıGörünür.style.fontSize  = ".7em";
+
+            //hakkımda-terapi-anakutu gizle
+            document.getElementById("hakkımda-terapi-anakutu").style.display = "none";
+
+            document.getElementsByClassName("yazı1")[0].style.marginTop = "1.5em";
+
+            
 
 
         }

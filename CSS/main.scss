@@ -20,7 +20,7 @@ $border-rad: 1.25em;
     overflow-y: hidden;
 
     display: grid;
-    grid-template-rows: 14% 1fr 5%;
+    grid-template-rows: 14% 1fr 10%;
     grid-template-areas: 
         "navbar"
         "main  "
@@ -31,26 +31,54 @@ $border-rad: 1.25em;
 
 header{
     grid-area: navbar;
-    background-color: rgba(240, 240, 240, 0.2);
+    background-color: #e8ffe8;
+    position: relative;
 
     display: flex;
     align-items: center;
+
+    a{
+        text-decoration: none;
+        color: black;
+        font-size: $font-size-desktop + .1em;
+    }
+
+    a:after {
+        content: '';
+        display: block;
+        border-bottom: 1px solid black;
+        width: 0;
+        position: absolute;
+        left: 0;
+        -webkit-transition: 800ms ease;
+        transition: 800ms ease;
+    }
+      
+    a:hover:after { 
+        width: 100%; 
+    }
+
+    #eğitim-nav{
+        position: absolute;
+        right: 20em;
+    }
+
+    #klinik-nav{
+
+        position: absolute;
+        right: 6em;
+    }
     
     #logo {
         font-weight: 800;
         font-size: $logo-font-size-desktop;
         margin-left: 4em;
+        display: inline-block;
+        border-bottom: 1px solid black;
         }
           
-    #logo:after {
-        content: " ";
-        border-bottom-style: solid;
-        border-bottom-width: 1px;
-        border-color: rgb(22, 22, 22);
-        padding-top: 1px;
-        display: table-cell;
-        width: 18.5em;
-        }
+    
+    
         
 }
 
@@ -109,6 +137,10 @@ main{
                 border: 2px solid rgba(0, 0, 0, 0.74);
             }
 
+            .yazı1{
+                margin-top: 6em;
+            }
+
             p{
                 grid-area: yazı;
                 font-size: .7em;
@@ -118,7 +150,7 @@ main{
             }
 
             a{
-                margin-left: 0;
+
             }
         }
 
@@ -181,8 +213,8 @@ main{
         &:hover .tel-num {
             color: white;
             transition: 0.5s;
-            transform: translateX(1.1em) translateY(-1.8em);
-            font-size: 22px;
+            transform: translateX(.3em) translateY(-1.8em);
+            font-size: 20px;
         }
 
         .tel-num {
@@ -208,8 +240,8 @@ main{
         .wp-icon {
           position: relative;
           float: right;
-          right: 17px;
-          top: 13px;
+          right: 11px;
+          top: 9px;
           fill: white;
         }
     }
@@ -257,7 +289,10 @@ main{
 
 footer{
     grid-area: footer;
-    background-color: rgba(244, 244, 244, 0.7);
+    background-color: #e8ffe8;
+    display: flex;
+    padding-top: 1%;
+    padding-left: 3em;
 }
 
 
@@ -285,6 +320,15 @@ footer{
     align-items: center;
     background-color: #e8ffe8;
    // background-color: rgba(240, 240, 240, 0.4);
+
+    
+    #eğitim-nav{
+        display: none;
+    }
+
+    #klinik-nav{
+        display: none;
+    }
 
 
     #logo {
