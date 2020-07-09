@@ -6,7 +6,133 @@ $logo-font-size-desktop: 1.2em;
 $logo-font-size-mobile: .6em;
 $border-rad: 1.25em;
 
+@media screen and (min-width: 1500px){
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat' , sans-serif;
+}
 
+.main-container{
+    height: 100vh;
+    width: 100%;
+    overflow-y: hidden;
+
+    display: grid;
+    grid-template-rows: 14% 1fr 7%;
+    grid-template-areas: 
+        "navbar"
+        "main  "
+        "footer";
+    
+}
+
+
+header{
+    grid-area: navbar;
+    background-color: #e8ffe8;
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    a{
+        text-decoration: none;
+        color: black;
+        font-size: $font-size-desktop + .1em;
+    }
+
+    a:after {
+        content: '';
+        display: block;
+        border-bottom: 1px solid black;
+        width: 0;
+        position: absolute;
+        left: 0;
+        -webkit-transition: 800ms ease;
+        transition: 800ms ease;
+    }
+      
+    a:hover:after { 
+        width: 100%; 
+    }
+
+    #eğitim-nav{
+        position: absolute;
+        right: 20em;
+    }
+
+    #klinik-nav{
+
+        position: absolute;
+        right: 6em;
+    }
+    
+    #logo {
+        font-weight: 800;
+        font-size: $logo-font-size-desktop;
+        margin-left: 4em;
+        display: inline-block;
+        border-bottom: 1px solid black;
+        }       
+}
+
+main{
+    grid-area: main;
+    width: 100vw;
+    padding: 7em;
+    position: relative;
+
+    a{
+        text-decoration: none;
+        color: black;
+        padding: 1em;
+        background-color: rgb(240, 240, 240);
+        border-radius: $border-rad;
+    }
+
+    .eğitim-kutusu{
+        border: 3px solid royalblue;
+        border-radius: $border-rad;
+        margin-bottom: 6em;
+        width: 100em;
+        height: 28em;
+        padding: 2em;
+        
+
+        h4{
+            font-size: 1.4em;
+            align-self: center;
+        }
+
+        ul {
+            /*border: 1px solid black;*/
+            list-style-type: none;
+            column-count: 2;
+            padding: 4% 3% 2% 0;
+
+          }
+          
+        li {
+            font-size: 1.3em;
+            padding-top: 1.5em;
+          }
+    }
+}
+
+footer{
+    grid-area: footer;
+    background-color: #e8ffe8;
+    display: flex;
+    padding-top: 1%;
+    padding-left: 3em;
+}
+}
+/*************************************************/
+/* MACBOOK AIR (1440 X 900) */
+
+@media screen and (min-width: 505px) and (max-width: 1500px){
 *{
     margin: 0;
     padding: 0;
@@ -127,4 +253,5 @@ footer{
     display: flex;
     padding-top: 1%;
     padding-left: 3em;
+}
 }

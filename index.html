@@ -164,6 +164,7 @@
 
 const mq = window.matchMedia( "(max-width: 500px)" );
 const macWidth = window.matchMedia( "(min-width:505px)" );
+const fullHd = window.matchMedia( "(min-width:1500px)" );
 
 function toggleText(btn, id){
 
@@ -184,6 +185,10 @@ function toggleText(btn, id){
         
         // Yazı küçüldükten sonra 6em'lik boşluğu bırak
         document.getElementsByClassName("yazı1")[0].style.marginTop = "6em";
+
+        if(fullHd.matches){
+            document.getElementsByClassName("yazı1")[0].style.marginTop = "10em";
+        }
 
         }
             
@@ -217,7 +222,13 @@ function toggleText(btn, id){
 
             document.getElementsByClassName("yazı1")[0].style.marginTop = "1.5em";
 
-            
+            if(fullHd.matches){
+                document.getElementsByClassName("yazı1")[0].style.fontSize = "1em";
+                document.getElementsByClassName("yazı1")[0].style.marginTop = "6em";
+
+                yazıGörünmez.style.fontSize = ".9em";
+                yazıGörünür.style.fontSize  = ".9em";
+            }            
 
 
         }
