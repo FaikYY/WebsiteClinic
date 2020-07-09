@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> RESPONSIVE GRID </title>
     <link rel="stylesheet" href="/CSS/main.css">
@@ -160,77 +160,87 @@
 
 
 </body>
-
 <script>
 
-const mq = window.matchMedia( "(max-width: 500px)" );
-const macWidth = window.matchMedia( "(min-width:505px)" );
-
-function toggleText(btn, id){
-
-    var e = document.getElementById(id);
-
-    if (e.style.display == 'block') {
-
-        e.style.display = 'none';
-
-        btn.innerHTML = "Devamını oku";
-
-        if(mq.matches){
-            document.getElementById("hakkımda-terapi-anakutu").style.display = "flex";
-        }
-        else if(macWidth.matches){
-        // hakkımda-terapi-anakutu gizle
-        document.getElementById("hakkımda-terapi-anakutu").style.display = "none";
-        
-        // Yazı küçüldükten sonra 6em'lik boşluğu bırak
-        document.getElementsByClassName("yazı1")[0].style.marginTop = "6em";
-
-        }
-            
-    }
-
-    else{
-
-        e.style.display = 'block';
-
-
-        
-
-        // mobil versiyon
-        if(mq.matches){
-            document.getElementById("hakkımda-profil-anakutu").style.gridTemplateRows = ".1fr 1fr";
-        }
-
-        //macbook versiyon
-        if(macWidth.matches){
-            const terapi = document.getElementById("hakkımda-terapi-anakutu");
-            terapi.style.display = "none";
-
-            const yazıGörünmez = document.getElementById("more");
-            const yazıGörünür  = document.getElementById("less");
-            
-            yazıGörünmez.style.fontSize = ".7em";
-            yazıGörünür.style.fontSize  = ".7em";
-
-            //hakkımda-terapi-anakutu gizle
+    const mq = window.matchMedia( "(max-width: 500px)" );
+    const macWidth = window.matchMedia( "(min-width:505px)" );
+    const fullHd = window.matchMedia( "(min-width:1500px)" );
+    
+    function toggleText(btn, id){
+    
+        var e = document.getElementById(id);
+    
+        if (e.style.display == 'block') {
+    
+            e.style.display = 'none';
+    
+            btn.innerHTML = "Devamını oku";
+    
+            if(mq.matches){
+                document.getElementById("hakkımda-terapi-anakutu").style.display = "flex";
+            }
+            else if(macWidth.matches){
+            // hakkımda-terapi-anakutu gizle
             document.getElementById("hakkımda-terapi-anakutu").style.display = "none";
-
-            document.getElementsByClassName("yazı1")[0].style.marginTop = "1.5em";
-
             
-
-
+            // Yazı küçüldükten sonra 6em'lik boşluğu bırak
+            document.getElementsByClassName("yazı1")[0].style.marginTop = "6em";
+    
+            if(fullHd.matches){
+                document.getElementsByClassName("yazı1")[0].style.marginTop = "10em";
+            }
+    
+            }
+                
         }
-
-
-
-        btn.innerHTML = "Yazıyı küçült";
-
-}
-
-}
-
- </script>
+    
+        else{
+    
+            e.style.display = 'block';
+    
+    
+            
+    
+            // mobil versiyon
+            if(mq.matches){
+                document.getElementById("hakkımda-profil-anakutu").style.gridTemplateRows = ".1fr 1fr";
+            }
+    
+            //macbook versiyon
+            if(macWidth.matches){
+                const terapi = document.getElementById("hakkımda-terapi-anakutu");
+                terapi.style.display = "none";
+    
+                const yazıGörünmez = document.getElementById("more");
+                const yazıGörünür  = document.getElementById("less");
+                
+                yazıGörünmez.style.fontSize = ".7em";
+                yazıGörünür.style.fontSize  = ".7em";
+    
+                //hakkımda-terapi-anakutu gizle
+                document.getElementById("hakkımda-terapi-anakutu").style.display = "none";
+    
+                document.getElementsByClassName("yazı1")[0].style.marginTop = "1.5em";
+    
+                if(fullHd.matches){
+                    document.getElementsByClassName("yazı1")[0].style.fontSize = "1em";
+                    document.getElementsByClassName("yazı1")[0].style.marginTop = "6em";
+    
+                    yazıGörünmez.style.fontSize = ".9em";
+                    yazıGörünür.style.fontSize  = ".9em";
+                }            
+    
+    
+            }
+    
+    
+    
+            btn.innerHTML = "Yazıyı küçült";
+    
+    }
+    
+    }
+    
+     </script>
 
 </html>
