@@ -571,20 +571,32 @@
     padding: 0;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
+    font-family: 'Montserrat' , sans-serif;
   }
   body, html {
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
     position: relative;
   }
+  .main-container {
+    height: 100vh;
+    width: 100%;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-rows: 20% 1fr 10%;
+        grid-template-rows: 20% 1fr 10%;
+        grid-template-areas: "navbar" "main  " "footer";
+  }
   header {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: navbar;
+    background-color: #e8ffe8;
+    position: relative;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    background-color: #e8ffe8;
   }
   header #eğitim-nav {
     display: none;
@@ -596,49 +608,42 @@
     font-weight: 800;
     font-size: 1.1em;
     margin-left: 2em;
-    color: #323232;
-  }
-  header #logo:after {
-    content: " ";
-    border-bottom-style: solid;
-    border-bottom-width: 1px;
-    border-color: #161616;
-    padding-top: 1px;
-    display: table-cell;
-    width: 18.4em;
-  }
-  .main-container {
-    overflow-y: visible;
-    -ms-grid-rows: 20% 1fr 10%;
-        grid-template-rows: 20% 1fr 10%;
+    display: inline-block;
+    border-bottom: 1px solid black;
   }
   main {
-    height: auto;
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
     grid-area: main;
+    height: auto;
     margin-left: 1.2em;
     margin-right: 1.2em;
-    margin-top: 1em;
+    margin-top: 1.2em;
+    margin-bottom: 2em;
     display: -ms-grid;
     display: grid;
-    grid-row-gap: 2em;
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
     -ms-grid-rows: auto;
         grid-template-rows: auto;
+    grid-row-gap: 2em;
         grid-template-areas: "box1" "box3" "box4";
   }
+  main .box {
+    border-radius: 1.25em;
+  }
   main #box1 {
-    margin-top: 2em;
     border: 2px solid #0f117a;
-    background: none;
+    margin-top: 2em;
     -ms-grid-row: 1;
     -ms-grid-column: 1;
     grid-area: box1;
     display: -ms-grid;
     display: grid;
+    padding: 1em;
+    grid-row-gap: 1em;
     -ms-grid-rows: .6fr .2fr;
         grid-template-rows: .6fr .2fr;
-    padding: 1em;
         grid-template-areas: "profil" "terapi";
   }
   main #box1 #hakkımda-profil-anakutu {
@@ -655,35 +660,29 @@
     -ms-grid-rows: .5fr 1fr;
         grid-template-rows: .5fr 1fr;
         grid-template-areas: "foto" "yazı";
-    /*
-                    a{
-                        margin: 0;
-                        margin-left: 1.7em;
-                        font-size: .9em;
-                        color: blue;
-                    }
-                    */
   }
   main #box1 #hakkımda-profil-anakutu h3 {
+    font-size: 1.4em;
     position: absolute;
     top: 1em;
     left: 1em;
   }
   main #box1 #hakkımda-profil-anakutu img {
+    margin-top: 6em;
     -ms-grid-row: 1;
     -ms-grid-column: 1;
     grid-area: foto;
     width: 9em;
     height: 9em;
     border-radius: 50%;
-    margin-right: 2em;
-    margin-top: 5em;
     border: 2px solid rgba(0, 0, 0, 0.74);
+  }
+  main #box1 #hakkımda-profil-anakutu .yazı1 {
+    margin-top: 3em;
   }
   main #box1 #hakkımda-profil-anakutu .yazı1 .yazı2 {
     width: 90%;
     font-size: 0.8em;
-    margin-left: 2em;
   }
   main #box1 #hakkımda-profil-anakutu p {
     -ms-grid-row: 2;
@@ -691,7 +690,9 @@
     grid-area: yazı;
     width: 90%;
     font-size: 0.8em;
-    margin-left: 2em;
+    margin-top: 2em;
+    margin-left: 1em;
+    margin-right: 1em;
   }
   main #box1 #hakkımda-terapi-anakutu {
     -ms-grid-row: 2;
@@ -704,13 +705,16 @@
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    margin-top: 1em;
+    display: flex;
   }
   main #box1 #hakkımda-terapi-anakutu h4 {
     -ms-flex-item-align: center;
         -ms-grid-row-align: center;
         align-self: center;
     font-size: .8em;
+  }
+  main #box1 #hakkımda-terapi-anakutu #eğitim-başlık {
+    margin-top: 2.5em;
   }
   main #box1 #hakkımda-terapi-anakutu #eğitim {
     margin-bottom: 2.5em;
@@ -723,6 +727,7 @@
     list-style-type: none;
     -webkit-column-count: 1;
             column-count: 1;
+    padding: .6em 3% 2% 5%;
   }
   main #box1 #hakkımda-terapi-anakutu li {
     font-size: 0.9em;
@@ -731,42 +736,61 @@
   main #box1 #hakkımda-terapi-anakutu li .bilgi {
     font-size: 0.8em;
   }
-  main #box2 {
-    background-color: #b4b4b4;
-    grid-area: box2;
-    height: 300px;
+  main .bize-ulaşın-kutusu {
     display: none;
   }
-  main a {
-    text-decoration: none;
-    color: black;
-  }
   main #box3 {
-    background: none;
     border: 2px solid chartreuse;
     -ms-grid-row: 2;
     -ms-grid-column: 1;
     grid-area: box3;
+    padding: 1em;
     height: 200px;
+    text-decoration: none;
+    color: black;
+    position: relative;
+  }
+  main #box3 h3 {
+    font-size: 1.2em;
   }
   main #box3 p {
-    width: 80%;
-    margin-top: -3em;
     font-size: 1em;
+    position: absolute;
+    top: 8em;
   }
   main #map-container {
+    border: 2px solid orange;
     -ms-grid-row: 3;
     -ms-grid-column: 1;
     grid-area: box4;
-    border: 2px solid orange;
     padding: 1em;
+  }
+  main #map-container h3 {
+    font-size: 1.2em;
   }
   main #map-container p {
     white-space: pre-line;
+    margin-top: 1em;
     font-size: 1em;
   }
   main #map-container #map {
     margin-top: 2em;
+  }
+  .pulse svg {
+    display: none;
+  }
+  footer {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    grid-area: footer;
+    background-color: #e8ffe8;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding-left: 1em;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   .pulse {
     position: fixed !important;
@@ -841,17 +865,6 @@
               transform: scale(1.2);
       opacity: 0;
     }
-  }
-  footer {
-    background-color: #e8ffe8;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    padding-left: 1em;
-    font-size: .9em;
   }
 }
 /*# sourceMappingURL=main.css.map */

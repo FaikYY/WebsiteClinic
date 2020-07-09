@@ -618,305 +618,310 @@ footer{
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+        font-family: 'Montserrat' , sans-serif;
     }
 
     body, html{
-        
-        box-sizing: border-box;
         position: relative;
-
     }
-
-    header{
-
-    display: flex;
-    align-items: center;
-    background-color: #e8ffe8;
-   // background-color: rgba(240, 240, 240, 0.4);
+    
+    .main-container{
+        height: 100vh;
+        width: 100%;
 
     
-    #eğitim-nav{
-        display: none;
-    }
-
-    #klinik-nav{
-        display: none;
-    }
-
-
-    #logo {
-        font-weight: 800;
-        font-size: $logo-font-size-mobile + .5em;
-        margin-left: 2em;
-        color: rgb(50, 50, 50);
-      }
-      
-    #logo:after {
-        content: " ";
-        border-bottom-style: solid;
-        border-bottom-width: 1px;
-        border-color: rgb(22, 22, 22);
-        padding-top: 1px;
-        display: table-cell;
-        width: 18.4em;
-     }
-    }
-
-
-    .main-container{
-        overflow-y: visible;
+        display: grid;
         grid-template-rows: 20% 1fr 10%;
+        grid-template-areas: 
+            "navbar"
+            "main  "
+            "footer";
         
     }
+    
+    
+    header{
+        grid-area: navbar;
+        background-color: #e8ffe8;
+        position: relative;
+    
+        display: flex;
+        align-items: center;
+    
 
-    main{
-        height: auto;
-        grid-area: main; 
+    
+        #eğitim-nav{
+            display: none;
+        }
+    
+        #klinik-nav{
+            display: none;
+        }
         
-
+        #logo {
+            font-weight: 800;
+            font-size: $logo-font-size-mobile + .5em;
+            margin-left: 2em;
+            display: inline-block;
+            border-bottom: 1px solid black;
+            }
+              
+        
+        
+            
+    }
+    
+    main{
+        grid-area: main;
+        height: auto;
         margin-left: 1.2em;
         margin-right: 1.2em;
-        margin-top: 1em;
+        margin-top: 1.2em;
+        margin-bottom: 2em;
+
+
         display: grid;
-        grid-row-gap: 2em;
         grid-template-columns: 1fr;
         grid-template-rows: auto;
+        grid-row-gap: 2em;
         grid-template-areas: 
             "box1"
             "box3"
             "box4";
     
         .box{
-
-            
-            
+            border-radius: $border-rad;
         }
-
+    
         #box1{
-            margin-top: 2em;
             border: 2px solid #0f117a;
-            background: none; 
+            margin-top: 2em;
             grid-area: box1;
             display: grid;
-            grid-template-rows: .6fr .2fr;
             padding: 1em;
+            grid-row-gap: 1em;
+            grid-template-rows: .6fr .2fr;
             grid-template-areas: 
                 "profil"
                 "terapi";
-
+    
+    
+            #hakkımda-profil-anakutu{
+                grid-area: profil;
+                position: relative;
+                display: grid;
+                justify-items: center;
+                text-align: justify;
+                grid-template-columns: 1fr;
+                grid-template-rows: .5fr 1fr;
+                grid-template-areas: 
+                    "foto"
+                    "yazı";
+    
                 
-
-
-                #hakkımda-profil-anakutu{
-                    grid-area: profil;
-                    position: relative;
-                    display: grid;
-                    justify-items: center;
-                    text-align: justify;
-                    grid-template-columns: 1fr;
-                    grid-template-rows: .5fr 1fr;
-                    grid-template-areas: 
-                        "foto"
-                        "yazı";
-        
-                    
-                    h3{
-                        position: absolute;
-                        top: 1em;
-                        left: 1em;
-                    }
-
-                    
-
-                    img{
-                        grid-area: foto;
-                        width: 9em;
-                        height: 9em;
-                        border-radius: 50%;
-                        margin-right: 2em;
-                        margin-top: 5em;
-                        border: 2px solid rgba(0, 0, 0, 0.74);
-                    }
-        
-                    .yazı1 .yazı2 {
-                        width: 90%;
-                        font-size: $font-size-mobile - .2em;
-                        margin-left: 2em;
-                    }
-
-                    p{
-                        grid-area: yazı;
-                        width: 90%;
-                        font-size: $font-size-mobile - .2em;
-                        margin-left: 2em;
-                    }
-
-                    /*
-                    a{
-                        margin: 0;
-                        margin-left: 1.7em;
-                        font-size: .9em;
-                        color: blue;
-                    }
-                    */
+    
+                h3{
+                    font-size: $font-size-desktop + .6em;
+                    position: absolute;
+                    top: 1em;
+                    left: 1em;
                 }
-        
-                #hakkımda-terapi-anakutu{
-                    grid-area: terapi;
-                    display: flex;
-                    flex-direction: column;
-                    margin-top: 1em;
-                    
-                    h4{
-                        align-self: center;
-                        font-size: .8em;
-                    }
-        
-                    #eğitim{
-                        margin-bottom: 2.5em;
-                    }
-
-                    #klinik{
-                        font-size: $font-size-mobile - .1em;
-                    }
-
-                    ul {
-                        /*border: 1px solid black;*/
-                        list-style-type: none;
-                        column-count: 1;
-
-                      }
-                      
-                    li {
-                        font-size: $font-size-mobile - .1em;
-                        padding-top: .9em;
-
-                        .bilgi{
-                            font-size: $font-size-mobile - .2em;
-                        }
-
-                        
-                      }
+    
+                img{
+                    margin-top: 6em;
+                    grid-area: foto;
+                    width: 9em;
+                    height: 9em;
+                    border-radius: 50%;
+                    border: 2px solid rgba(0, 0, 0, 0.74);
                 }
+    
+                .yazı1{
+                    margin-top: 3em;
+                }
+
+                .yazı1 .yazı2{
+                    width: 90%;
+                    font-size: $font-size-mobile - .2em;
+                }
+    
+                p{
+                    grid-area: yazı;
+                    width: 90%;
+                    font-size: $font-size-mobile - .2em;
+                    margin-top: 2em;
+                    margin-left: 1em;
+                    margin-right: 1em;
+                }
+    
+                
             }
     
-        #box2{
-            background-color: rgb(180, 180, 180);
-            grid-area: box2;
-            height: 300px;
+            #hakkımda-terapi-anakutu{
+                grid-area: terapi;
+                display: flex;
+                flex-direction: column;
+                display: flex;
+                
+                h4{
+                    align-self: center;
+                    font-size: .8em;
+                }
+
+                #eğitim-başlık{
+                    margin-top: 2.5em;
+                }
+
+                #eğitim{
+                    margin-bottom: 2.5em;
+                }
+
+                #klinik{
+                    font-size: $font-size-mobile - .1em;
+                }
+    
+                ul {
+                    /*border: 1px solid black;*/
+                    list-style-type: none;
+                    column-count: 1;
+                    padding: .6em 3% 2% 5%;
+                  }
+                  
+                li {
+                    font-size: $font-size-mobile - .1em;
+                    padding-top: .9em;
+
+                    .bilgi{
+                        font-size: $font-size-mobile - .2em;
+                    }
+                  }
+            }
+        }
+    
+    
+        .bize-ulaşın-kutusu{
             display: none;
         }
-
-        
-        a{
-            text-decoration: none;
-            color: black;
-        }
-
+    
+    
+    
         #box3{
-            background: none;
             border: 2px solid chartreuse;
             grid-area: box3;
+            padding: 1em;
             height: 200px;
-
-
+            text-decoration: none;
+            color: black;
+            position: relative;
             
-
-            p{
-                width: 80%;
-                margin-top: -3em;
-                font-size: $font-size-mobile;
+            h3{
+                font-size: $font-size-mobile + .2em;
             }
-
-            
+    
+            p{
+                font-size: $font-size-mobile;
+                position: absolute;
+                top: 8em;
+            }
         }
     
+    
         #map-container{
-            grid-area: box4;
             border: 2px solid orange;
+            grid-area: box4;
             padding: 1em;
-
+    
+            h3{
+                font-size: $font-size-mobile + .2em;
+            }
+    
             p{
                 white-space: pre-line;
+                margin-top: 1em;
                 font-size: $font-size-mobile;
             }
-
-            
-
+    
             #map{
                 margin-top: 2em;
             }
         }
+    
+        
+    }
+    
+    
+    
+    .pulse svg{
+        display: none;
+    }
+    
+    footer{
+        grid-area: footer;
+        background-color: #e8ffe8;
+        display: flex;
+        padding-left: 1em;
+        align-items: center;
     }
 
 
-    .pulse {
-        position: fixed!important;
-        bottom: 0%;
-        left: 85%;
-        transform: translate(-50%, -50%);
-        background: #9bdc28;
-        border-radius: 50%;
-        width: 55px;
-        height: 55px;
-        color: #fff;
-        text-align: center;
-        line-height: 55px;
-        font-size: 40px;
-          z-index:1;
+.pulse {
+    position: fixed!important;
+    bottom: 0%;
+    left: 85%;
+    transform: translate(-50%, -50%);
+    background: #9bdc28;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    color: #fff;
+    text-align: center;
+    line-height: 55px;
+    font-size: 40px;
+      z-index:1;
 
-          svg{
-              fill: white;
-              display: inline;
-              transform: rotate(240deg);
-          }
+      svg{
+          fill: white;
+          display: inline;
+          transform: rotate(240deg);
       }
-      
-      .pulse:before,
-      .pulse:after {
-          content: " ";
-          display: block;
-          position: absolute;
-          border: 50%;
-          border: 2px solid #87bd2a;
-          left: -20px;
-          right: -20px;
-          top: -20px;
-          bottom: -20px;
-          border-radius: 50%;
-          animation: animate 1.5s linear infinite;
-          opacity: 0;
-          backface-visibility: hidden; 
-      }
-      
-      .pulse:after{
-          animation-delay: .5s;
-      }
-      
-      @keyframes animate
+  }
+  
+  .pulse:before,
+  .pulse:after {
+      content: " ";
+      display: block;
+      position: absolute;
+      border: 50%;
+      border: 2px solid #87bd2a;
+      left: -20px;
+      right: -20px;
+      top: -20px;
+      bottom: -20px;
+      border-radius: 50%;
+      animation: animate 1.5s linear infinite;
+      opacity: 0;
+      backface-visibility: hidden; 
+  }
+  
+  .pulse:after{
+      animation-delay: .5s;
+  }
+  
+  @keyframes animate
+  {
+      0%
       {
-          0%
-          {
-              transform: scale(0.5);
-              opacity: 0;
-          }
-          50%
-          {
-              opacity: 1;
-          }
-          100%
-          {
-              transform: scale(1.2);
-              opacity: 0;
-          }
+          transform: scale(0.5);
+          opacity: 0;
       }
-
-      footer{
-        background-color: #e8ffe8;
-        display: flex;
-        align-items: center;
-        padding-left: 1em;
-        font-size: .9em;
+      50%
+      {
+          opacity: 1;
       }
-
+      100%
+      {
+          transform: scale(1.2);
+          opacity: 0;
+      }
+  }
 }
