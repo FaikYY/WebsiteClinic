@@ -77,7 +77,7 @@ main a {
 main .eğitim-kutusu {
   border: 3px solid royalblue;
   border-radius: 1.25em;
-  margin-bottom: 6em;
+  margin-bottom: 2em;
   width: 56em;
   height: 28em;
   padding: 2em;
@@ -351,4 +351,4 @@ footer {
     padding-left: 3em;
   }
 }
-/*# sourceMappingURL=eğitim.css.map */
+/*# sourceMappingURL=eğitim.css.map */
