@@ -1,0 +1,36 @@
+
+// 1-HELPERS (font size variables included)
+@import "../1-helpers/var";
+
+
+/////////////////////* iPadAir SCREEN STYLE */////////////////
+//////////////////////////////////////////////////////////
+
+//
+//  COMPONENTS STARTS HERE
+//
+
+
+// * 
+@import "../1-helpers/*";
+
+
+// MAIN CONTAINER (INCLUDES EVERYTHING INSIDE)
+@import "1-main-container/main-container"; 
+
+    // HEADER
+    @import "2-header/header";
+
+
+    // CONTENT BOX 
+    @import "3-content/content";
+
+    // DOES NOT SHOW CALL BUTTON IT'S FOR MOBILE
+    .pulse svg{
+        display: none;
+    }
+    
+    // FOOTER
+    @import "4-footer/footer";
+
+/*******************************************************/

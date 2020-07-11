@@ -1,0 +1,17 @@
+
+
+// MAP BOX GOES HERE
+
+#map-container{
+    border: 2px solid orange;
+    grid-area: box4;
+    padding: 1em;
+
+    p{
+        white-space: pre-line;
+    }
+
+    #map{
+        margin-top: 7em;
+    }
+}

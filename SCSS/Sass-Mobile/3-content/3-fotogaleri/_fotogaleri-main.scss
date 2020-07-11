@@ -1,0 +1,23 @@
+
+
+// FOTOGALERI GOES HERE
+
+#box3{
+    border: 2px solid chartreuse;
+    grid-area: box3;
+    padding: 1em;
+    height: 200px;
+    text-decoration: none;
+    color: black;
+    position: relative;
+    
+    h3{
+        font-size: $font-size-mobile + .2em;
+    }
+
+    p{
+        font-size: $font-size-mobile;
+        position: absolute;
+        top: 8em;
+    }
+}

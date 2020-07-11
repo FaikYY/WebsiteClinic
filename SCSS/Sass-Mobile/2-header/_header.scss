@@ -1,0 +1,30 @@
+
+
+// HEADER GOES HERE
+
+header{
+    grid-area: navbar;
+    background-color: #e8ffe8;
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+
+
+    #eğitim-nav{
+        display: none;
+    }
+
+    #klinik-nav{
+        display: none;
+    }
+    
+    #logo {
+        font-weight: 800;
+        font-size: $logo-font-size-mobile + .5em;
+        margin-left: 2em;
+        display: inline-block;
+        border-bottom: 1px solid black;
+        }     
+}

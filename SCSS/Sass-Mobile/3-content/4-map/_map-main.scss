@@ -1,0 +1,23 @@
+
+
+// MAP GOES HERE
+
+#map-container{
+    border: 2px solid orange;
+    grid-area: box4;
+    padding: 1em;
+
+    h3{
+        font-size: $font-size-mobile + .2em;
+    }
+
+    p{
+        white-space: pre-line;
+        margin-top: 1em;
+        font-size: $font-size-mobile;
+    }
+
+    #map{
+        margin-top: 2em;
+    }
+}

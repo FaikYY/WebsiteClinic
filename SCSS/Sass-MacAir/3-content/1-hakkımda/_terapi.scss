@@ -1,0 +1,30 @@
+
+
+// TERAPI GOES HERE
+
+#hakkımda-terapi-anakutu{
+    grid-area: terapi;
+    display: flex;
+    flex-direction: column;
+    display: none;
+    
+    h4{
+        align-self: center;
+    }
+
+    ul {
+        /*border: 1px solid black;*/
+        list-style-type: none;
+        column-count: 3;
+        padding: .6em 3% 2% 5%;
+      }
+      
+    li {
+        font-size: $font-size-desktop;
+        padding-top: .4em;
+      }
+
+    .hide{
+        display: none;
+    }
+}
