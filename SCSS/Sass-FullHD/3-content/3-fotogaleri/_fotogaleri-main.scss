@@ -1,0 +1,21 @@
+
+// FOTO GALERI BOX
+
+#box3{
+    border: 2px solid chartreuse;
+    grid-area: box3;
+    padding: 1em;
+    text-decoration: none;
+    color: black;
+    position: relative;
+    
+    h3{
+        font-size: $font-size-desktop + .6em;
+    }
+
+    p{
+        font-size: $font-size-mobile ;
+        position: absolute;
+        top: 8em;
+    }
+}

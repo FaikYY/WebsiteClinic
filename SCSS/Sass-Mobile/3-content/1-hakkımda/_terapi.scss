@@ -1,0 +1,43 @@
+
+
+// TERAPI GOES HERE
+
+#hakkımda-terapi-anakutu{
+    grid-area: terapi;
+    display: flex;
+    flex-direction: column;
+    display: flex;
+    
+    h4{
+        align-self: center;
+        font-size: .8em;
+    }
+
+    #eğitim-başlık{
+        margin-top: 2.5em;
+    }
+
+    #eğitim{
+        margin-bottom: 2.5em;
+    }
+
+    #klinik{
+        font-size: $font-size-mobile - .1em;
+    }
+
+    ul {
+        /*border: 1px solid black;*/
+        list-style-type: none;
+        column-count: 1;
+        padding: .6em 3% 2% 5%;
+      }
+      
+    li {
+        font-size: $font-size-mobile - .1em;
+        padding-top: .9em;
+
+        .bilgi{
+            font-size: $font-size-mobile - .2em;
+        }
+      }
+}

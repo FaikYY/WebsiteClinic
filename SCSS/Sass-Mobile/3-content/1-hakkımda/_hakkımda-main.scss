@@ -1,0 +1,22 @@
+
+
+// HAKKIMDA GOES HERE
+
+#box1{
+    border: 2px solid #0f117a;
+    margin-top: 2em;
+    grid-area: box1;
+    display: grid;
+    padding: 1em;
+    grid-row-gap: 1em;
+    grid-template-rows: .6fr .2fr;
+    grid-template-areas: 
+        "profil"
+        "terapi";
+
+    // PROFILE PART    
+    @import "profil";
+
+    // TERAPI PART
+    @import "terapi";
+}

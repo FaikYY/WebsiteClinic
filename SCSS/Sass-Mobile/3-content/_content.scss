@@ -1,0 +1,38 @@
+
+
+// CONTENT GOES HERE
+
+main{
+    grid-area: main;
+    height: auto;
+    margin-left: 1.2em;
+    margin-right: 1.2em;
+    margin-top: 1.2em;
+    margin-bottom: 2em;
+
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-row-gap: 2em;
+    grid-template-areas: 
+        "box1"
+        "box3"
+        "box4";
+
+    .box{
+        border-radius: $border-rad;
+    }
+
+    // HAKKIMDA BOX
+    @import "1-hakkımda/hakkımda-main";
+
+    // BIZE ULASIN BOX
+    @import "2-bize-ulaşın/bize-ulaşın-main";
+
+    // FOTO GALERI BOX
+    @import "3-fotogaleri/fotogaleri-main";
+
+    // MAP BOX
+    @import "4-map/map-main";
+}

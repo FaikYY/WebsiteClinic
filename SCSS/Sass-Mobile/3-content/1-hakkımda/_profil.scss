@@ -1,0 +1,54 @@
+
+
+// PROFIL GOES HERE
+
+#hakkımda-profil-anakutu{
+    grid-area: profil;
+    position: relative;
+    display: grid;
+    justify-items: center;
+    text-align: justify;
+    grid-template-columns: 1fr;
+    grid-template-rows: .5fr 1fr;
+    grid-template-areas: 
+        "foto"
+        "yazı";
+
+    
+
+    h3{
+        font-size: $font-size-desktop + .6em;
+        position: absolute;
+        top: 1em;
+        left: 1em;
+    }
+
+    img{
+        margin-top: 6em;
+        grid-area: foto;
+        width: 9em;
+        height: 9em;
+        border-radius: 50%;
+        border: 2px solid rgba(0, 0, 0, 0.74);
+    }
+
+    .yazı1{
+        margin-top: 3em;
+    }
+
+    .yazı1 .yazı2{
+        width: 90%;
+        font-size: $font-size-mobile - .2em;
+    }
+
+    p{
+        grid-area: yazı;
+        width: 90%;
+        font-size: $font-size-mobile - .2em;
+        margin-top: 2em;
+        margin-left: 1em;
+        margin-right: 1em;
+    }
+
+    
+}

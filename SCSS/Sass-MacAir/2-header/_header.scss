@@ -1,0 +1,56 @@
+
+
+// HEADER
+
+header{
+    grid-area: navbar;
+    background-color: #e8ffe8;
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    a{
+        text-decoration: none;
+        color: black;
+        font-size: $font-size-desktop + .1em;
+    }
+
+    a:after {
+        content: '';
+        display: block;
+        border-bottom: 1px solid black;
+        width: 0;
+        position: absolute;
+        left: 0;
+        -webkit-transition: 800ms ease;
+        transition: 800ms ease;
+    }
+      
+    a:hover:after { 
+        width: 100%; 
+    }
+
+    #eğitim-nav{
+        position: absolute;
+        right: 20em;
+    }
+
+    #klinik-nav{
+
+        position: absolute;
+        right: 6em;
+    }
+    
+    #logo {
+        font-weight: 800;
+        font-size: $logo-font-size-desktop;
+        margin-left: 4em;
+        display: inline-block;
+        border-bottom: 1px solid black;
+        }
+          
+    
+    
+        
+}
