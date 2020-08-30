@@ -18,7 +18,7 @@ body, html {
   display: grid;
   -ms-grid-rows: 20% 1fr 10%;
       grid-template-rows: 20% 1fr 10%;
-      grid-template-areas: "navbar" "main  " "footer";
+      grid-template-areas: "navbar" "main  " "footer";
 }
 
 header {
@@ -67,7 +67,7 @@ main {
   -ms-grid-rows: auto;
       grid-template-rows: auto;
   grid-row-gap: 2em;
-      grid-template-areas: "box1" "box3" "box4";
+      grid-template-areas: "box1" "box3" "box4";
 }
 
 main .box {
@@ -86,7 +86,7 @@ main #box1 {
   grid-row-gap: 1em;
   -ms-grid-rows: .6fr .2fr;
       grid-template-rows: .6fr .2fr;
-      grid-template-areas: "profil" "terapi";
+      grid-template-areas: "profil" "terapi";
 }
 
 main #box1 #hakkımda-profil-anakutu {
@@ -102,7 +102,7 @@ main #box1 #hakkımda-profil-anakutu {
       grid-template-columns: 1fr;
   -ms-grid-rows: .5fr 1fr;
       grid-template-rows: .5fr 1fr;
-      grid-template-areas: "foto" "yazı";
+      grid-template-areas: "foto" "yazı";
 }
 
 main #box1 #hakkımda-profil-anakutu h3 {
@@ -117,8 +117,8 @@ main #box1 #hakkımda-profil-anakutu img {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: foto;
-  width: 9em;
-  height: 9em;
+  width: 8.5em;
+  height: 10em;
   border-radius: 50%;
   border: 2px solid rgba(0, 0, 0, 0.74);
 }

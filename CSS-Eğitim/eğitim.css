@@ -16,7 +16,7 @@
   display: grid;
   -ms-grid-rows: 14% 1fr 7%;
       grid-template-rows: 14% 1fr 7%;
-      grid-template-areas: "navbar" "main  " "footer";
+      grid-template-areas: "navbar" "main  " "footer";
 }
 
 header {
@@ -132,7 +132,7 @@ footer {
     display: grid;
     -ms-grid-rows: 14% 1fr 7%;
         grid-template-rows: 14% 1fr 7%;
-        grid-template-areas: "navbar" "main  " "footer";
+        grid-template-areas: "navbar" "main  " "footer";
   }
   header {
     -ms-grid-row: 1;
@@ -251,7 +251,7 @@ footer {
     display: grid;
     -ms-grid-rows: 14% 1fr 7%;
         grid-template-rows: 14% 1fr 7%;
-        grid-template-areas: "navbar" "main  " "footer";
+        grid-template-areas: "navbar" "main  " "footer";
   }
   header {
     -ms-grid-row: 1;

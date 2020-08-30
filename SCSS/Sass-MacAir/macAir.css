@@ -15,7 +15,7 @@
   display: grid;
   -ms-grid-rows: 14% 1fr 10%;
       grid-template-rows: 14% 1fr 10%;
-      grid-template-areas: "navbar" "main  " "footer";
+      grid-template-areas: "navbar" "main  " "footer";
 }
 
 header {
@@ -84,7 +84,7 @@ main {
       grid-template-rows: 0.4fr 0.7fr;
   grid-column-gap: 4em;
   grid-row-gap: 5em;
-      grid-template-areas: "box1 box2 box4" "box1 box3 box4";
+      grid-template-areas: "box1 box2 box4" "box1 box3 box4";
 }
 
 main .box {
@@ -102,7 +102,7 @@ main #box1 {
   grid-row-gap: 1em;
   -ms-grid-rows: 60% 1fr;
       grid-template-rows: 60% 1fr;
-      grid-template-areas: "profil" "terapi";
+      grid-template-areas: "profil" "terapi";
 }
 
 main #box1 #hakkımda-profil-anakutu {

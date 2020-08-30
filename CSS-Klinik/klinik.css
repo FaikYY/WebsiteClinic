@@ -15,7 +15,7 @@
     display: grid;
     -ms-grid-rows: 14% 1fr 7%;
         grid-template-rows: 14% 1fr 7%;
-        grid-template-areas: "navbar" "main  " "footer";
+        grid-template-areas: "navbar" "main  " "footer";
   }
   header {
     -ms-grid-row: 1;
@@ -120,7 +120,7 @@
     display: grid;
     -ms-grid-rows: 14% 1fr 7%;
         grid-template-rows: 14% 1fr 7%;
-        grid-template-areas: "navbar" "main  " "footer";
+        grid-template-areas: "navbar" "main  " "footer";
   }
   header {
     -ms-grid-row: 1;
@@ -240,7 +240,7 @@
     display: grid;
     -ms-grid-rows: 14% 1fr 7%;
         grid-template-rows: 14% 1fr 7%;
-        grid-template-areas: "navbar" "main  " "footer";
+        grid-template-areas: "navbar" "main  " "footer";
   }
   header {
     -ms-grid-row: 1;
