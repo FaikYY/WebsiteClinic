@@ -9,8 +9,8 @@ body {
 }
 
 h2{
-  font-size: 1.3em;
-  margin-left: .6em;
+  font-size: 1.2em;
+  margin-left: 1em;
   margin-top: 1em;
 }
 
@@ -18,8 +18,8 @@ h2{
 
 .home{
   position: absolute;
-  bottom: 8%;
-  margin-left: 4%;
+  bottom: 6%;
+  margin-left: 3%;
   background: rgb(235, 235, 235);
   padding: 1.2em;
   cursor: pointer;
@@ -32,10 +32,10 @@ h2{
 }
 
 .slider-ctr {
-  top: 5em;
+  top: 4em;
   left: 15%;
-  width: 70%;
-  height: 70%;
+  width: 75%;
+  height: 85%;
   position: absolute;
   box-sizing: border-box;
   border: 5px solid white;
@@ -134,7 +134,7 @@ h2{
 
 
 .slide .title {
-  font-size: .8em;
+  font-size: 1.4em;
   margin-bottom: 2px;
   color: white;
   transition: 0.3s all cubic-bezier(0.65, 0.05, 0.36, 1) 0.45s;
@@ -161,14 +161,14 @@ body {
 h2{
   font-size: 1.3em;
   margin-left: .6em;
-  margin-top: 3.5em;
+  margin-top: 3em;
 }
 
 
 
 .home{
   position: absolute;
-  bottom: 25%;
+  bottom: 15%;
   margin-left: .6em;
   background: rgb(235, 235, 235);
   padding: 1.2em;
@@ -182,10 +182,10 @@ h2{
 }
 
 .slider-ctr {
-  top: 8em;
+  top: 10em;
   width: 100%;
   left: 0;
-  height: 18.75em;
+  height: 20em;
   position: absolute;
   box-sizing: border-box;
   border: 5px solid white;
