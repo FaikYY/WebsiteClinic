@@ -75,7 +75,7 @@ main {
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   grid-area: main;
-  margin: 5em;
+  margin: 4em;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1.8fr 1fr .8fr;
@@ -305,6 +305,10 @@ main #map-container #map {
 }
 
 .pulse svg {
+  display: none;
+}
+
+.pulse-instagram svg {
   display: none;
 }
 

@@ -1,0 +1,63 @@
+// ARAMA BUTONU GOES HERE
+
+
+.pulse-instagram {
+    position: fixed!important;
+    bottom: 0%;
+    left: 15%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    color: #fff;
+    text-align: center;
+    line-height: 55px;
+    font-size: 40px;
+      z-index:1;
+
+      svg{
+          
+          fill: white;
+          display: inline;
+      }
+
+      &:before,
+      &:after{
+        content: " ";
+        display: block;
+        position: absolute;
+        border: 50%;
+        border: 2px solid #d6249f;
+        left: -20px;
+        right: -20px;
+        top: -20px;
+        bottom: -20px;
+        border-radius: 50%;
+        animation: animate 1.5s linear infinite;
+        opacity: 0;
+        backface-visibility: hidden; 
+      }
+
+      &:after{
+          animation-delay: .5s;
+      }
+  }
+  
+  @keyframes animate
+  {
+      0%
+      {
+          transform: scale(0.5);
+          opacity: 0;
+      }
+      50%
+      {
+          opacity: 1;
+      }
+      100%
+      {
+          transform: scale(1.0);
+          opacity: 0;
+      }
+  }
