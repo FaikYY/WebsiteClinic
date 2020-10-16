@@ -28,7 +28,15 @@
 
     // DOES NOT SHOW CALL BUTTON IT'S FOR MOBILE
     .pulse svg{
-        display: none;
+        position: absolute;
+        left: -9999px;
+        width: 1px;
+    }
+
+    .pulse-instagram svg{
+        position: absolute;
+        left: -9999px;
+        width:1px;
     }
     
     // FOOTER

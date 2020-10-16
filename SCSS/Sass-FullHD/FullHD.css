@@ -305,11 +305,15 @@ main #map-container #map {
 }
 
 .pulse svg {
-  display: none;
+  position: absolute;
+  left: -9999px;
+  width: 1px;
 }
 
 .pulse-instagram svg {
-  display: none;
+  position: absolute;
+  left: -9999px;
+  width: 1px;
 }
 
 footer {
