@@ -18,7 +18,7 @@ body, html {
   display: grid;
   -ms-grid-rows: 20% 1fr 10%;
       grid-template-rows: 20% 1fr 10%;
-      grid-template-areas: "navbar" "main  " "footer";
+      grid-template-areas: "navbar" "main  " "footer";
 }
 
 header {
@@ -67,17 +67,21 @@ main {
   -ms-grid-rows: auto;
       grid-template-rows: auto;
   grid-row-gap: 2em;
-      grid-template-areas: "box1" "box3" "box4";
+      grid-template-areas: "doktorTakvimi" "box1" "box3" "box4";
 }
 
 main .box {
   border-radius: 1.25em;
 }
 
+main iframe {
+  display: inline;
+}
+
 main #box1 {
   border: 2px solid #0f117a;
-  margin-top: 2em;
-  -ms-grid-row: 1;
+  margin-top: 0;
+  -ms-grid-row: 2;
   -ms-grid-column: 1;
   grid-area: box1;
   display: -ms-grid;
@@ -86,7 +90,7 @@ main #box1 {
   grid-row-gap: 1em;
   -ms-grid-rows: .6fr .2fr;
       grid-template-rows: .6fr .2fr;
-      grid-template-areas: "profil" "terapi";
+      grid-template-areas: "profil" "terapi";
 }
 
 main #box1 #hakkımda-profil-anakutu {
@@ -100,9 +104,9 @@ main #box1 #hakkımda-profil-anakutu {
   text-align: justify;
   -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
-  -ms-grid-rows: .5fr 1fr;
-      grid-template-rows: .5fr 1fr;
-      grid-template-areas: "foto" "yazı";
+  -ms-grid-rows: .1fr 1fr;
+      grid-template-rows: .1fr 1fr;
+      grid-template-areas: "yazı";
 }
 
 main #box1 #hakkımda-profil-anakutu h3 {
@@ -113,18 +117,11 @@ main #box1 #hakkımda-profil-anakutu h3 {
 }
 
 main #box1 #hakkımda-profil-anakutu img {
-  margin-top: 6em;
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
-  grid-area: foto;
-  width: 9em;
-  height: 12em;
-  border-radius: 50%;
-  border: 2px solid rgba(0, 0, 0, 0.74);
+  display: none;
 }
 
 main #box1 #hakkımda-profil-anakutu .yazı1 {
-  margin-top: 3em;
+  margin-top: 1.5em;
 }
 
 main #box1 #hakkımda-profil-anakutu .yazı1 .yazı2 {
@@ -133,12 +130,12 @@ main #box1 #hakkımda-profil-anakutu .yazı1 .yazı2 {
 }
 
 main #box1 #hakkımda-profil-anakutu p {
-  -ms-grid-row: 2;
+  -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: yazı;
   width: 90%;
   font-size: 0.8em;
-  margin-top: 2em;
+  margin-top: 1em;
   margin-left: 1em;
   margin-right: 1em;
 }
@@ -165,7 +162,7 @@ main #box1 #hakkımda-terapi-anakutu h4 {
 }
 
 main #box1 #hakkımda-terapi-anakutu #eğitim-başlık {
-  margin-top: 2.5em;
+  margin-top: 1.5em;
 }
 
 main #box1 #hakkımda-terapi-anakutu #eğitim {
@@ -199,7 +196,7 @@ main .bize-ulaşın-kutusu {
 
 main #box3 {
   border: 2px solid chartreuse;
-  -ms-grid-row: 2;
+  -ms-grid-row: 3;
   -ms-grid-column: 1;
   grid-area: box3;
   padding: 1em;
@@ -221,7 +218,7 @@ main #box3 p {
 
 main #map-container {
   border: 2px solid orange;
-  -ms-grid-row: 3;
+  -ms-grid-row: 4;
   -ms-grid-column: 1;
   grid-area: box4;
   padding: 1em;

@@ -16,12 +16,18 @@ main{
     grid-template-rows: auto;
     grid-row-gap: 2em;
     grid-template-areas: 
+        "doktorTakvimi"
         "box1"
         "box3"
         "box4";
 
     .box{
         border-radius: $border-rad;
+    }
+
+    // DOKTOR TAKVIMI BOX
+    iframe{
+        display: inline;
     }
 
     // HAKKIMDA BOX
